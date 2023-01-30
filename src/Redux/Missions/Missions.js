@@ -26,10 +26,33 @@ const MissionsReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'LOAD_MISSIONS':
       return {
-        missions: action.payload
-      }
+        missions: action.payload,
+      };
+    case 'JOIN_MISSION': {
+      // Update the state if the mission id matches the payload
+      const stateUpdate = state.missions.map((mission) => {
+        if (mission.mission_id === action.payload) {
+          return { ...mission, joined: true };
+        }
+        return mission;
+      });
+      return { missions: stateUpdate };
+    }
+    case 'LEAVE_MISSION': {
+      // Update the state if the mission id matches the payload
+      const stateUpdate = state.missions.map((mission) => {
+        if (mission.mission_id === action.payload) {
+          return { ...mission, joined: false };
+        }
+        return mission;
+      });
+      return { mission: stateUpdate };
+    }
+
+    default:
+      return state;
   }
-}
+};
 
 // export const reducer = (state = initialState, action) => {
 //   switch (action.type) {
