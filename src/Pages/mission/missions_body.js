@@ -25,8 +25,17 @@ const MissionsBody = () => {
   };
 
   return (
-    <div>
-      <h1>Missions</h1>
-    </div>
+    <tbody>
+      {missions.map((mission) => {
+        return (
+          <tr key={mission.mission_id}>
+            <td>
+              {mission.mission_name}
+            </td>
+            <td>{mission.mission_description}</td>
+          </tr>
+        );
+      })}
+    </tbody>
   );
 };
