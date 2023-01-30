@@ -12,3 +12,11 @@ const loadMissions = (payload) => ({
 });
 
 // Fetch the mission from the API
+const FetchMissions = createAsyncThunk(
+  'LOAD_MISSIONS',
+  async (dispatch) => {
+    const response = await fetch('https://api.spacexdata.com/v3/missions');
+    const data = await response.json();
+    dispatch(loadMissions(data));
+  },
+);
