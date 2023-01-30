@@ -7,7 +7,8 @@ import {
 
 const MissionsBody = () => {
   const dispatch = useDispatch();
-  const datas = useSelector((state) => state.MissionsReducer.missions);
+  const datas = useSelector((state) => state.missions.missions);
+  console.log(datas);
 
   const missions = Object.values(datas);
 
@@ -15,7 +16,7 @@ const MissionsBody = () => {
     dispatch(FetchMissions());
   }, [dispatch]);
 
-  const handleJoin = (e) => {
+  const handleJoin = (e) => { // actually not working, will be updated in next task
     // Check if the button text is Join Mission or Leave Mission
     if (e.target.textContent === 'Join Mission') {
       dispatch(joinMission(e.target.id));
@@ -24,7 +25,7 @@ const MissionsBody = () => {
     }
   };
 
-  const changeBackgroundColor = (joined) => {
+  const changeBackgroundColor = (joined) => { // actually not working, will be updated in next task
     let classes = 'btn';
     classes += joined ? 'red' : 'black';
     return classes;
@@ -33,6 +34,7 @@ const MissionsBody = () => {
   return (
     <tbody>
       {missions.map((mission) => {
+        // actually not working, will be updated in next task
         const changeButtonClass = changeBackgroundColor(mission.joined);
         // change the text of the button depending on the member status and action
         let Status;
@@ -47,7 +49,7 @@ const MissionsBody = () => {
         return (
           <tr key={mission.mission_id}>
             <td>{mission.mission_name}</td>
-            <td>{mission.mission_description}</td>
+            <td>{mission.description}</td>
             <td>
               <span>{Status}</span>
             </td>
