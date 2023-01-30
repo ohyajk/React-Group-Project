@@ -24,6 +24,12 @@ const MissionsBody = () => {
     }
   };
 
+  const changeBackgroundColor = (joined) => {
+    let classes = 'btn';
+    classes += joined ? 'red' : 'black';
+    return classes;
+  };
+
   return (
     <tbody>
       {missions.map((mission) => {
