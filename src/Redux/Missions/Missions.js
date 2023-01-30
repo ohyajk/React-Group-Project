@@ -11,6 +11,16 @@ const loadMissions = (payload) => ({
   payload,
 });
 
+const joinMission = (payload) => ({
+  type: 'JOIN_MISSION',
+  payload,
+});
+
+const leaveMission = (payload) => ({
+  type: 'LEAVE_MISSION',
+  payload,
+});
+
 // Fetch the mission from the API
 const FetchMissions = createAsyncThunk(
   'LOAD_MISSIONS',
@@ -54,5 +64,7 @@ const MissionsReducer = (state = initialState, action) => {
   }
 };
 
-export { loadMissions, FetchMissions };
+export {
+  loadMissions, leaveMission, joinMission, FetchMissions,
+};
 export default MissionsReducer;
