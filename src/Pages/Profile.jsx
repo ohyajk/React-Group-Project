@@ -1,8 +1,9 @@
 import React from 'react';
+import './Profile.css';
 
 const Profile = () => {
   return (
-    <div>
+    <div className="profile">
       <h2 className="profile-heading">My Profile</h2>
       <div className="rockets">
         <h4>My Rockets</h4>
