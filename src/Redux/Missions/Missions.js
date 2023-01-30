@@ -1,10 +1,14 @@
+import { createAsyncThunk } from '@reduxjs/toolkit';
+
 // an object that contains all the missions
 const initialState = {
   missions: [],
 };
 
 // The action creator
-export const loadMissions = (missions) => ({
+const loadMissions = (payload) => ({
   type: 'LOAD_MISSIONS',
-  payload: missions,
+  payload,
 });
+
+// Fetch the mission from the API
