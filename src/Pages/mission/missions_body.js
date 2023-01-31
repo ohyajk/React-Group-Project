@@ -8,7 +8,6 @@ import {
 const MissionsBody = () => {
   const dispatch = useDispatch();
   const datas = useSelector((state) => state.missions.missions);
-  console.log(datas);
 
   const missions = Object.values(datas);
 
