@@ -2,6 +2,8 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import './Profile.css';
 
+import JoinedMissions from './mission/joined_missions';
+
 const Profile = () => {
   const rockets = useSelector((state) => state.rockets);
 
@@ -19,12 +21,7 @@ const Profile = () => {
             })}
           </ul>
         </div>
-        <div className="missions">
-          <h2>My Missions</h2>
-          <ul>
-            <li>Mission 1</li>
-          </ul>
-        </div>
+        <JoinedMissions />
       </div>
     </>
   );
