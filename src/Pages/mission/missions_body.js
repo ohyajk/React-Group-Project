@@ -9,13 +9,13 @@ import {
 
 const MissionsBody = () => {
   const dispatch = useDispatch();
-  const datas = useSelector((state) => state.missions.missions);
+  const missionsList = useSelector((state) => state.missions.missions);
 
-  const missions = Object.values(datas);
+  const missions = Object.values(missionsList);
 
   useEffect(() => {
-    dispatch(FetchMissions());
-  }, [dispatch]);
+    if (!missions.length) { dispatch(FetchMissions()); }
+  }, [dispatch, missions.length]);
 
   const handleJoin = (e) => {
     if (e.target.textContent === 'Leave mission') {
