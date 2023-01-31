@@ -6,6 +6,7 @@ import JoinedMissions from './mission/joined_missions';
 
 const Profile = () => {
   const rockets = useSelector((state) => state.rockets);
+  const activeRocket = rockets.filter((rkt) => rkt.reserved !== false);
 
   return (
     <>
@@ -14,9 +15,9 @@ const Profile = () => {
         <div className="rockets">
           <h2>My Rockets</h2>
           <ul>
-            {rockets.map((rkt) => {
+            {activeRocket.map((rkt) => {
               return (
-                rkt.reserved === true ? <li key={rkt.name}>{rkt.name}</li> : ''
+                <li key={rkt.name}>{rkt.name}</li>
               );
             })}
           </ul>
