@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 export const rocketsData = createAsyncThunk('get/rocketsData', async () => {
   const response = await fetch('https://api.spacexdata.com/v3/rockets');
@@ -46,7 +46,7 @@ export const rocketSlice = createSlice({
       });
       return newState;
     });
-    builder.addCase(rocketsData.rejected, (state, action) => {
+    builder.addCase(rocketsData.rejected, (state) => {
       const newState = state;
       newState.push('Rejected');
       return newState;
