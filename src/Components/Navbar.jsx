@@ -7,7 +7,7 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <div className="head">
-        <img className="logo" src={Planet} alt="logo" />
+        <img className="logo-nav" src={Planet} alt="logo" />
         <div className="title">
           <span>Space</span>
           <span className="word2">Traveler&apos;s</span>

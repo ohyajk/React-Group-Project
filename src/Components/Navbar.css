@@ -33,7 +33,7 @@
   animation: colorchange 5s infinite;
 }
 
-.logo {
+.logo-nav {
   display: flex;
   height: 58px;
   animation: rotate 5s infinite;

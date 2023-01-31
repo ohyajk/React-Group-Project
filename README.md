@@ -73,7 +73,7 @@ REQUIRED SECTIONS:
 
 > Add a link to your deployed project.
 
-- Coming Soon...
+- https://react-group-project-space-traveller.onrender.com/
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
