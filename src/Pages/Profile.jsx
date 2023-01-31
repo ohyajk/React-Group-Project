@@ -1,23 +1,31 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import './Profile.css';
 
 const Profile = () => {
+
+  const rockets = useSelector((state) => state.rockets);
+
   return (
-    <div className="profile">
+    <>
       <h2 className="profile-heading">My Profile</h2>
+      <div className="profile">
       <div className="rockets">
-        <h4>My Rockets</h4>
+        <h2>My Rockets</h2>
         <ul>
-          <li>Rocket 1</li>
+          {rockets.map(rkt => { return(
+            rkt.reserved === true ? <li key={rkt.name} >{rkt.name}</li> : '' 
+          )})}
         </ul>
       </div>
       <div className="missions">
-        <h4>My Missions</h4>
+        <h2>My Missions</h2>
         <ul>
           <li>Mission 1</li>
         </ul>
       </div>
     </div>
+    </>
   );
 };
 
