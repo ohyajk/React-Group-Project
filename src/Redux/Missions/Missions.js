@@ -61,28 +61,31 @@ const MissionsReducer = (state = initialState, action) => {
         missions: action.payload,
       };
     case 'JOIN_MISSION': {
-      // Update the state if the mission id matches the payload
-      const stateUpdate = state.missions.map((mission) => {
+      const newState = state.missions.map((mission) => {
         if (mission.mission_id === action.payload) {
           return { ...mission, joined: true };
         }
         return mission;
       });
-      return { missions: stateUpdate };
+      return { missions: newState };
     }
     case 'LEAVE_MISSION': {
-      // Update the state if the mission id matches the payload
-      const stateUpdate = state.missions.map((mission) => {
+      const newState = state.missions.map((mission) => {
         if (mission.mission_id === action.payload) {
           return { ...mission, joined: false };
         }
         return mission;
       });
-      return { mission: stateUpdate };
+      return { missions: newState };
     }
 
-    default:
-      return state;
+    default: {
+      const newState = state.missions.map((mission) => {
+        if (mission.mission_id === action.payload) {
+          return { ...mission, joined: true };
+        }
+        return mission;
+      }); return { missions: newState }; }
   }
 };
 
