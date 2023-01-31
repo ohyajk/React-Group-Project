@@ -24,4 +24,3 @@ describe('testing for rockets data', () => {
     expect(screen.queryByText(/Description/)).toBeNull();
   });
 });
-
