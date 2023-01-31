@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import Planet from '../Assets/planet.png';
 import './Navbar.css';
 
@@ -15,9 +15,9 @@ const Navbar = () => {
         </div>
       </div>
       <div className="nav">
-        <Link to="/">ROCKETS</Link>
-        <Link to="/missions">MISSIONS</Link>
-        <Link to="/profile">MY PROFILE</Link>
+        <NavLink to="/" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>ROCKETS</NavLink>
+        <NavLink to="/missions" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>MISSIONS</NavLink>
+        <NavLink to="/profile" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>MY PROFILE</NavLink>
       </div>
 
     </div>
