@@ -1,5 +1,3 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
-
 // an object that contains all the missions
 const initialState = {
   missions: [],
@@ -7,7 +5,7 @@ const initialState = {
 
 // The action creator
 const loadMissions = (payload) => ({
-  type: 'LOAD_MISSIONS',
+  type: 'FETCH_MISSIONS',
   payload,
 });
 
@@ -22,19 +20,46 @@ const leaveMission = (payload) => ({
 });
 
 // Fetch the mission from the API
-const FetchMissions = createAsyncThunk(
-  'LOAD_MISSIONS',
-  async (dispatch) => {
-    const response = await fetch('https://api.spacexdata.com/v3/missions');
-    const data = await response.json();
-    dispatch(loadMissions(data));
-  },
-);
+// const FetchMissions = createAsyncThunk(
+//   'FETCH_MISSIONS',
+//   async (dispatch) => {
+//     const request = await fetch('https://api.spacexdata.com/v3/missions/');
+//     const response = await request.json();
+//     const missions = Object.keys(response).map((id) => {
+//       const mission = {
+//         mission_id: response[id].mission_id,
+//         mission_name: response[id].mission_name,
+//         description: response[id].description,
+//       };
+//       return mission;
+//     });
+
+//     console.log(missions);
+//     dispatch(loadMissions(missions));
+//   },
+// );
+
+const FetchMissions = () => async (dispatch) => {
+  const request = await fetch('https://api.spacexdata.com/v3/missions');
+  const response = await request.json();
+  const missions = Object.keys(response).map((id) => {
+    console.log(response[id].mission_id);
+    const mission = {
+      mission_id: response[id].mission_id,
+      mission_name: response[id].mission_name,
+      description: response[id].description,
+    };
+    return mission;
+  });
+
+  console.log(missions);
+  dispatch(loadMissions(missions));
+};
 
 // The reducer
 const MissionsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'LOAD_MISSIONS':
+    case 'FETCH_MISSIONS':
       return {
         missions: action.payload,
       };
