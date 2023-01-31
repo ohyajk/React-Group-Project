@@ -43,7 +43,6 @@ const FetchMissions = () => async (dispatch) => {
   const request = await fetch('https://api.spacexdata.com/v3/missions');
   const response = await request.json();
   const missions = Object.keys(response).map((id) => {
-    console.log(response[id].mission_id);
     const mission = {
       mission_id: response[id].mission_id,
       mission_name: response[id].mission_name,
@@ -51,8 +50,6 @@ const FetchMissions = () => async (dispatch) => {
     };
     return mission;
   });
-
-  console.log(missions);
   dispatch(loadMissions(missions));
 };
 
