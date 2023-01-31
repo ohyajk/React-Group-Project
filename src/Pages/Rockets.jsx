@@ -16,7 +16,7 @@ const Rockets = () => {
             <h2>{rkt.name}</h2>
             {rkt.reserved === true ? <span className="reserve">&bull; Reserved</span> : ''}
             <p>{rkt.description}</p>
-            {rkt.reserved === false ? <button onClick={()=> {dispatch(reserveRocket(rkt.id))}} type="button">MAKE RESERVATION</button> : <button onClick={()=> {dispatch(cancelReservation(rkt.id))}} type="button">CANCEL RESERVATION</button>}
+            {rkt.reserved === false ? <button className="btn1" onClick={()=> {dispatch(reserveRocket(rkt.id))}} type="button">MAKE RESERVATION</button> : <button className="btn2" onClick={()=> {dispatch(cancelReservation(rkt.id))}} type="button">CANCEL RESERVATION</button>}
             
           </div>
         </li>
