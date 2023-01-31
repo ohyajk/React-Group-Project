@@ -1,5 +1,7 @@
 .rocket-ul {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   width: 100%;
   text-decoration: none;
@@ -12,6 +14,7 @@
   align-items: flex-start;
   gap: 24px;
   width: 85%;
+  margin: 10px 0;
 }
 
 .rocket-img {
