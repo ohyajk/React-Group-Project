@@ -1,0 +1,26 @@
+.profile {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  text-align: center;
+}
+
+.profile-heading {
+  text-align: center;
+  font-family: cursive;
+}
+
+.profile ul {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+.profile li {
+  text-decoration: none;
+  list-style: none;
+  padding: 4px 8px;
+  border: 1px solid white;
+  margin: 4px 0;
+}
