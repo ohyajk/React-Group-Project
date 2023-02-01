@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -31,25 +32,15 @@ const MissionsBody = () => {
         // actually not working, will be updated in next task
         const changeButtonClass = buttonClass(mission.joined);
         const changeBadgeClass = badgeClass(mission.joined);
-        // change the text of the button depending on the member status and action
-        let Status;
-        let Action;
-        if (mission.joined) {
-          Action = 'Leave mission';
-          Status = 'Active member';
-        } else {
-          Action = 'Join mission';
-          Status = 'NOT A MEMBER';
-        }
         return (
           <tr key={mission.mission_id}>
             <td>{mission.mission_name}</td>
             <td>{mission.description}</td>
             <td>
-              <span className={changeBadgeClass}>{Status}</span>
+              <span className={changeBadgeClass}>{mission.joined ? 'Active member' : 'NOT A MEMBER'}</span>
             </td>
             <td>
-              <button id={mission.mission_id} type="button" className={changeButtonClass} onClick={handleJoin}>{Action}</button>
+              <button id={mission.mission_id} type="button" className={changeButtonClass} onClick={handleJoin}>{mission.joined ? 'Leave mission' : 'Join mission'}</button>
             </td>
           </tr>
         );
