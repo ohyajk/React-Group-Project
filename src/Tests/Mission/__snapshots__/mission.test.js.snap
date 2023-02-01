@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Display the missions list Renders correctly every missions from the API 1`] = `
+<div
+  className="container"
+>
+  <table
+    className="table table-bordered table-striped"
+  >
+    <thead>
+      <tr>
+        <th>
+          Mission
+        </th>
+        <th>
+          Description 
+        </th>
+        <th>
+          Status
+        </th>
+        <th>
+          Join
+        </th>
+      </tr>
+    </thead>
+    <tbody />
+  </table>
+</div>
+`;
