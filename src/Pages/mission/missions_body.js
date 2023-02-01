@@ -33,9 +33,9 @@ const MissionsBody = () => {
         const changeButtonClass = buttonClass(mission.joined);
         const changeBadgeClass = badgeClass(mission.joined);
         return (
-          <tr key={mission.mission_id}>
+          <tr key={mission.mission_id} className="pb-5">
             <td>{mission.mission_name}</td>
-            <td>{mission.description}</td>
+            <td className="pb-4">{mission.description}</td>
             <td>
               <span className={changeBadgeClass}>{mission.joined ? 'Active member' : 'NOT A MEMBER'}</span>
             </td>
