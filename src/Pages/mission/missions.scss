@@ -64,7 +64,6 @@ thead {
 table,
 th,
 td {
-  border: 1px solid #d6d6d6;
   padding: 10px;
   text-align: left;
 }
@@ -78,8 +77,10 @@ td {
 .bg-secondary {
   background-color: #6d757d;
   color: #fff;
-  padding: 10px;
-  border-radius: 6px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  text-transform: capitalize;
   font-weight: bold;
 }
 
@@ -98,26 +99,28 @@ td span {
 }
 
 .btn {
-  border-radius: 2px;
+  border: none;
+  border-radius: 5px;
   font-size: 16px;
   margin: 0 11px;
+  padding: 5px 10px;
+  cursor: pointer;
+  text-transform: capitalize;
 }
 
 .pb-5:nth-child(odd) {
-  background: #eef0f1;
+  background: #111;
 }
 
 .pb-5:nth-child(even) {
-  background: rgb(253, 253, 253);
+  background: #050505;
 }
 
 .missions-list {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
 
   &__missions {
-    border: 1px solid gray;
     border-radius: 5px;
   }
 
