@@ -2,7 +2,7 @@ import TestRenderer from 'react-test-renderer';
 import '@testing-library/jest-dom/extend-expect';
 import { Provider } from 'react-redux';
 import store from '../../redux/configureStore';
-import Missions from '../../Pages/Missions';
+import MissionsBody from '../../Pages/mission/missions_body';
 
 describe('Display the missions list', () => {
   it('Renders correctly every missions from the API', () => {
@@ -14,7 +14,7 @@ describe('Display the missions list', () => {
     };
     const missions = TestRenderer.create(
       <Provider store={store}>
-        <Missions key={mission.id} missions={mission} />
+        <MissionsBody key={mission.id} missions={mission} />
       </Provider>,
     ).toJSON();
     expect(missions).toMatchSnapshot();
